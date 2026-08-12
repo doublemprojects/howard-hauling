@@ -1,11 +1,109 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Veteran-owned junk removal in Columbia and Howard County, Maryland. Small junk pickups starting at $99."><title>Howard Hauling | Junk Removal in Howard County, MD</title><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><link rel="stylesheet" href="style.css"></head><body>
-<header><a class="brand" href="#"><b>HOWARD <i>HAULING</i></b><small>Veteran Owned • by Double M Solutions LLC</small></a><nav><a href="#take">What We Take</a><a href="#area">Service Area</a><a href="tel:+12403892534">(240) 389-2534</a><a class="cta" href="sms:+12403892534">Text for Quote</a></nav></header>
-<main><section class="hero"><div><label>JUNK REMOVAL IN COLUMBIA & HOWARD COUNTY, MD</label><h1>Need it gone?<br><em>We’ll haul it away.</em></h1><p>Furniture, household junk, garage clutter, appliances, yard debris and more — removed without the hassle.</p><div class="buttons"><a class="primary" href="sms:+12403892534">TEXT PHOTOS FOR A FREE QUOTE</a><a href="tel:+12403892534">CALL (240) 389-2534</a></div><strong>Small junk pickups starting at $99*</strong></div>
-<aside><label>HOW IT WORKS</label><h2>Getting junk removed should be easy.</h2><div class="step"><b>1</b><span><strong>Text photos</strong><small>Show us what needs to go.</small></span></div><div class="step"><b>2</b><span><strong>Get your price</strong><small>We confirm pricing with you.</small></span></div><div class="step"><b>3</b><span><strong>We haul it</strong><small>We load it up and take it away.</small></span></div></aside></section>
-<div class="trust"><span>★ Veteran Owned</span><span>● Local Howard County Business</span><span>✓ Upfront Pricing</span><span>✓ No Hidden Fees</span></div>
-<section class="section" id="take"><label>WHAT WE TAKE</label><h2>You point. We make it disappear.</h2><p class="lead">Not sure if we take it? Text a photo to <a href="sms:+12403892534">(240) 389-2534</a>.</p><div class="grid"><article>▰<h3>Furniture</h3><p>Couches, chairs, tables, dressers and household furniture.</p></article><article>▥<h3>Mattresses</h3><p>Mattresses, box springs and bulky bedroom items.</p></article><article>▦<h3>Appliances</h3><p>Accepted household appliances and other bulky items.</p></article><article>⌂<h3>Garage & Basement Junk</h3><p>Boxes, clutter, old belongings and general household junk.</p></article><article>♣<h3>Yard Debris</h3><p>Branches, brush and accepted outdoor cleanup debris.</p></article><article>□<h3>Move-Outs & Cleanouts</h3><p>Rental units, garages, basements and smaller cleanouts.</p></article></div><div class="photocta"><b>Fastest way to get a price: send 2–3 photos.</b><a class="primary" href="sms:+12403892534">TEXT PHOTOS NOW</a></div></section>
-<section class="price"><div><label>SIMPLE PRICING</label><h2>Small junk pickups<br><em>start at $99*</em></h2></div><div><p>Every job is different. Send photos and your location for a quick quote. We confirm pricing before work begins.</p><small>*For qualifying small pickups. Final price depends on volume, weight, labor, access, location and disposal requirements.</small></div></section>
-<section class="area" id="area"><div><label>SERVICE AREA</label><h2>Local junk removal throughout Howard County.</h2><p>Based in Columbia and serving communities throughout Howard County, Maryland.</p><b>Columbia • Ellicott City • Elkridge • Jessup • Savage • Clarksville • Fulton • and nearby communities</b></div><div class="mapbox"><div id="map"></div><small>Interactive map • drag and zoom</small></div></section>
-<section class="final"><label>FREE QUOTE</label><h2>Got junk? Send us a picture.</h2><p>Text your location and 2–3 clear photos. We’ll take it from there.</p><div class="buttons center"><a class="primary" href="sms:+12403892534">TEXT (240) 389-2534</a><a href="tel:+12403892534">CALL NOW</a></div></section></main>
-<footer><b>HOWARD HAULING</b><span>Veteran Owned • Double M Solutions LLC</span><span>Columbia & Howard County, Maryland</span><a href="tel:+12403892534">(240) 389-2534</a></footer>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script>const m=L.map('map',{scrollWheelZoom:false}).setView([39.215,-76.86],10);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(m);L.circle([39.215,-76.86],{radius:15500,color:'#557a60',weight:3,fillColor:'#7fa489',fillOpacity:.22}).addTo(m).bindPopup('Howard Hauling service area');L.circleMarker([39.2037,-76.861],{radius:6,color:'#294b35',fillOpacity:1}).addTo(m).bindPopup('Columbia, MD');</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Veteran-owned junk removal in Columbia and Howard County, Maryland. Furniture, appliances, household junk, cleanouts and yard debris. Small junk pickups starting at $99.">
+<title>Howard Hauling | Junk Removal in Howard County, MD</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <a class="brand" href="#top"><span>HOWARD <b>HAULING</b></span><small>VETERAN OWNED • HOWARD COUNTY, MD</small></a>
+  <nav><a href="#services">What We Take</a><a href="#area">Service Area</a><a class="phone" href="tel:+12403892534">(240) 389-2534</a><a class="quote" href="sms:+12403892534">TEXT FOR QUOTE</a></nav>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="hero-copy">
+   <div class="eyebrow">LOCAL JUNK REMOVAL • COLUMBIA & HOWARD COUNTY</div>
+   <h1>Junk gone.<br><span>Simple as that.</span></h1>
+   <p>Furniture, appliances, household junk, garage clutter, cleanouts and yard debris — we load it and haul it away.</p>
+   <div class="actions"><a class="btn primary" href="sms:+12403892534">📷 TEXT PHOTOS FOR A FREE QUOTE</a><a class="btn light" href="tel:+12403892534">☎ CALL (240) 389-2534</a></div>
+   <div class="starting"><b>Small junk pickups starting at $99*</b><span>Get your price before we start.</span></div>
+ </div>
+
+ <div class="hero-visual">
+   <div class="visual-top"><span class="veteran">★ VETERAN OWNED</span><span>HOWARD HAULING</span></div>
+   <div class="junk-scene" aria-label="Illustration of common junk removal items">
+     <div class="sofa"><i></i><i></i><i></i></div>
+     <div class="box box1">↗</div><div class="box box2">FRAGILE</div>
+     <div class="lamp"><i></i></div>
+     <div class="plant">✦</div>
+     <div class="dolly"><span></span></div>
+   </div>
+   <div class="visual-bottom"><b>YOU POINT.</b><span>WE HAUL.</span></div>
+ </div>
+</section>
+
+<section class="trust">
+ <div><strong>★</strong><span><b>Veteran Owned</b><small>Local business</small></span></div>
+ <div><strong>✓</strong><span><b>Upfront Pricing</b><small>Know the price first</small></span></div>
+ <div><strong>⌂</strong><span><b>Howard County Local</b><small>Based in Columbia</small></span></div>
+ <div><strong>☎</strong><span><b>Easy Free Quotes</b><small>Just text us photos</small></span></div>
+</section>
+
+<section class="how">
+ <div class="section-intro"><div class="eyebrow">HOW IT WORKS</div><h2>Three steps. That’s it.</h2><p>No complicated forms. Start by sending a few pictures of what you want gone.</p></div>
+ <div class="steps">
+   <article><div class="step-icon">📷</div><span>01</span><h3>Text photos</h3><p>Send your location and 2–3 clear photos.</p></article>
+   <div class="arrow">→</div>
+   <article><div class="step-icon">💬</div><span>02</span><h3>Get your quote</h3><p>We’ll confirm your price before the job.</p></article>
+   <div class="arrow">→</div>
+   <article><div class="step-icon">🚚</div><span>03</span><h3>We haul it away</h3><p>You show us what goes. We handle the lifting.</p></article>
+ </div>
+</section>
+
+<section class="services" id="services">
+ <div class="section-intro left"><div class="eyebrow">WHAT WE TAKE</div><h2>Got junk? We probably take it.</h2><p>Not sure? Send a photo. We’ll tell you if we can haul it.</p></div>
+ <div class="service-grid">
+  <article><div class="svc-icon">🛋️</div><h3>Furniture</h3><p>Couches, chairs, tables, dressers and unwanted furniture.</p></article>
+  <article><div class="svc-icon">▤</div><h3>Mattresses</h3><p>Mattresses, box springs and bulky bedroom items.</p></article>
+  <article><div class="svc-icon">▦</div><h3>Appliances</h3><p>Accepted household appliances and other bulky items.</p></article>
+  <article><div class="svc-icon">📦</div><h3>Household Junk</h3><p>Boxes, clutter, old belongings and general household junk.</p></article>
+  <article><div class="svc-icon">🌿</div><h3>Yard Debris</h3><p>Branches, brush and accepted outdoor cleanup debris.</p></article>
+  <article><div class="svc-icon">🏠</div><h3>Cleanouts</h3><p>Garages, basements, rental units and smaller move-out cleanouts.</p></article>
+ </div>
+ <a class="wide-quote" href="sms:+12403892534"><span>NOT SURE IF WE TAKE IT?</span><b>Text us a picture →</b></a>
+</section>
+
+<section class="pricing">
+ <div class="price-badge"><small>STARTING AT</small><strong>$99</strong><span>QUALIFYING SMALL PICKUPS*</span></div>
+ <div><div class="eyebrow pale">STRAIGHTFORWARD PRICING</div><h2>See it. Quote it.<br>Haul it.</h2><p>Every job is different. Text photos and your location for the fastest quote. Your price is confirmed before work begins.</p><small>*Final price depends on volume, weight, labor, access, location and disposal requirements.</small></div>
+</section>
+
+<section class="area" id="area">
+ <div class="area-copy"><div class="eyebrow">SERVICE AREA</div><h2>Howard County is home.</h2><p>We provide local junk removal throughout Howard County, Maryland and nearby areas.</p>
+ <div class="cities"><span>Columbia</span><span>Ellicott City</span><span>Elkridge</span><span>Laurel</span><span>Jessup</span><span>Savage</span><span>Clarksville</span><span>Fulton</span></div>
+ <a href="sms:+12403892534">TEXT YOUR ADDRESS TO CHECK SERVICE →</a></div>
+ <div class="map-card"><div class="map-title"><b>Howard County Service Area</b><span>Drag • scroll to zoom • pinch on mobile</span></div><div id="map"></div><div id="mapStatus">Loading official Howard County boundary…</div></div>
+</section>
+
+<section class="final">
+ <div class="final-icon">📷</div><div><div class="eyebrow pale">FREE QUOTE</div><h2>Ready to clear it out?</h2><p>Text your location and a few photos. We’ll take it from there.</p></div>
+ <div class="actions"><a class="btn cream" href="sms:+12403892534">TEXT (240) 389-2534</a><a class="btn outline" href="tel:+12403892534">CALL NOW</a></div>
+</section>
+</main>
+
+<footer><div><b>HOWARD HAULING</b><span>Veteran Owned • by Double M Solutions LLC</span></div><div>Junk Removal in Columbia & Howard County, MD</div><a href="tel:+12403892534">(240) 389-2534</a><div>© 2026 Double M Solutions LLC</div></footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const map=L.map('map',{scrollWheelZoom:true,zoomControl:true}).setView([39.22,-76.87],10);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
+const status=document.getElementById('mapStatus');
+fetch('https://opendata.maryland.gov/api/v3/views/y8c4-8fr3/query.geojson?accessType=DOWNLOAD')
+ .then(r=>r.json()).then(data=>{
+   const f={type:'FeatureCollection',features:data.features.filter(x=>String(x.properties.county||x.properties.County||'').toLowerCase().includes('howard'))};
+   if(!f.features.length) throw new Error('Howard County feature not found');
+   const layer=L.geoJSON(f,{style:{color:'#244d36',weight:4,fillColor:'#74a47e',fillOpacity:.32}}).addTo(map);
+   map.fitBounds(layer.getBounds(),{padding:[22,22]});
+   layer.bindPopup('<b>Howard County, Maryland</b><br>Howard Hauling primary service area');
+   status.textContent='Howard County boundary • Maryland Open Data';
+ }).catch(()=>{
+   status.textContent='Howard County, Maryland • interactive service map';
+   L.marker([39.2037,-76.8610]).addTo(map).bindPopup('Columbia, Maryland');
+ });
+</script>
+</body></html>
