@@ -548,6 +548,15 @@ details[open] summary::after{content:"−"}
   }
 }
 
+
+/* FINAL RIGHT-GAP FIX — preserve current hero scale and layout */
+@media (min-width:1101px){
+  .hero-fade .hero-bg{
+    object-fit:contain;
+    object-position:calc(50% + 230px) center;
+  }
+}
+
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"Howard Hauling","legalName":"Double M Solutions LLC","description":"Veteran-owned junk removal serving Howard County and nearby Maryland communities.","telephone":"+1-240-389-2534","url":"https://doublemprojects.github.io/howard-hauling/","areaServed":["Howard County, Maryland","Columbia, Maryland","Ellicott City, Maryland","Elkridge, Maryland","Laurel, Maryland","Jessup, Maryland","Savage, Maryland","Clarksville, Maryland","Fulton, Maryland"],"image":"https://doublemprojects.github.io/howard-hauling/hero-truck.png"}
