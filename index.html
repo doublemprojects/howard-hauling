@@ -95,9 +95,10 @@ details[open] summary::after{content:"−"}
   .hero-actions{margin-top:0!important}
   .hero-note{margin-top:10px!important}
   .hero-visual{
-    height:500px!important;
+    height:auto!important;
+    aspect-ratio:1.9 / 1!important;
     min-height:0!important;
-    max-height:500px!important;
+    max-height:none!important;
   }
   .hero-visual img{
     width:100%!important;
@@ -108,7 +109,7 @@ details[open] summary::after{content:"−"}
 }
 @media (min-width: 1400px) and (max-height: 950px){
   .hero{padding-top:30px!important;padding-bottom:28px!important}
-  .hero-visual{height:460px!important;max-height:460px!important}
+  .hero-visual{height:auto!important;max-height:none!important;aspect-ratio:1.9 / 1!important}
 }
 
 
@@ -117,7 +118,7 @@ details[open] summary::after{content:"−"}
 @media (min-width:901px){
   .hero-visual img{
     object-fit:cover!important;
-    object-position:center bottom!important;
+    object-position:center center!important;
   }
 }
 
