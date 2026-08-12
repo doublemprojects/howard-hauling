@@ -585,6 +585,59 @@ details[open] summary::after{content:"−"}
   }
 }
 
+
+/* FINAL SEAMLESS LEFT FADE
+   Keep the right-gap fix exactly as-is.
+   This adds a localized overlay to hide the visible left edge of the photo
+   without pushing the dark gradient too far across the truck.
+*/
+@media (min-width:1101px){
+  .hero-fade .hero-bg{
+    object-fit:contain;
+    object-position:calc(50% + 310px) center;
+  }
+
+  /* Main readability gradient: smoother and less invasive over the truck */
+  .hero-fade .hero-shade{
+    background:
+      linear-gradient(90deg,
+        rgba(3,13,7,1) 0%,
+        rgba(3,13,7,1) 24%,
+        rgba(3,13,7,.98) 30%,
+        rgba(3,14,8,.88) 36%,
+        rgba(3,14,8,.66) 42%,
+        rgba(3,14,8,.40) 48%,
+        rgba(3,14,8,.18) 54%,
+        rgba(3,14,8,.05) 60%,
+        rgba(3,14,8,0) 66%);
+  }
+
+  /* Seam-hider centered around where the contained image begins.
+     It is intentionally narrow so the truck does not get over-darkened. */
+  .hero.hero-fade::after{
+    content:"";
+    position:absolute;
+    z-index:1;
+    pointer-events:none;
+    top:0;
+    bottom:0;
+    left:27%;
+    width:15%;
+    background:linear-gradient(90deg,
+      rgba(3,13,7,.98) 0%,
+      rgba(3,13,7,.88) 20%,
+      rgba(3,13,7,.60) 48%,
+      rgba(3,13,7,.25) 74%,
+      rgba(3,13,7,0) 100%);
+  }
+
+  /* Ensure hero text remains above both overlays */
+  .hero-fade-content{
+    position:relative;
+    z-index:2;
+  }
+}
+
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"Howard Hauling","legalName":"Double M Solutions LLC","description":"Veteran-owned junk removal serving Howard County and nearby Maryland communities.","telephone":"+1-240-389-2534","url":"https://doublemprojects.github.io/howard-hauling/","areaServed":["Howard County, Maryland","Columbia, Maryland","Ellicott City, Maryland","Elkridge, Maryland","Laurel, Maryland","Jessup, Maryland","Savage, Maryland","Clarksville, Maryland","Fulton, Maryland"],"image":"https://doublemprojects.github.io/howard-hauling/hero-truck.png"}
