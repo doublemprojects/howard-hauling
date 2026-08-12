@@ -122,6 +122,289 @@ details[open] summary::after{content:"−"}
   }
 }
 
+
+/* =========================================================
+   FINAL HERO — dark copy area fading naturally into truck photo
+   ========================================================= */
+.hero.hero-fade{
+  position:relative;
+  isolation:isolate;
+  min-height:560px;
+  padding:0;
+  overflow:hidden;
+  background:#07110a;
+}
+
+.hero-fade .hero-bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  width:100%;
+  height:100%;
+  max-width:none;
+  object-fit:cover;
+  object-position:center center;
+  display:block;
+}
+
+.hero-fade .hero-shade{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:
+    linear-gradient(90deg,
+      rgba(3,13,7,.99) 0%,
+      rgba(3,14,8,.97) 19%,
+      rgba(3,14,8,.90) 31%,
+      rgba(3,14,8,.66) 43%,
+      rgba(3,14,8,.24) 55%,
+      rgba(3,14,8,.04) 67%,
+      rgba(3,14,8,0) 76%);
+  pointer-events:none;
+}
+
+.hero-fade-content{
+  position:relative;
+  z-index:2;
+  width:min(720px,48vw);
+  min-height:560px;
+  padding:48px 0 38px max(4.2vw,42px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  color:#fff;
+}
+
+.hero-location{
+  margin:0 0 14px;
+  color:#6fa05f;
+  font-size:14px;
+  line-height:1.3;
+  font-weight:900;
+  letter-spacing:.075em;
+}
+
+.hero-display{
+  margin:0 0 24px!important;
+  font-family:Impact,"Arial Narrow",Arial,sans-serif;
+  font-size:clamp(62px,5.5vw,92px)!important;
+  line-height:.88!important;
+  letter-spacing:.005em!important;
+  text-transform:uppercase;
+  color:#fff!important;
+  text-shadow:0 3px 12px rgba(0,0,0,.22);
+}
+
+.hero-display span,
+.hero-display em{
+  display:block;
+}
+
+.hero-display em{
+  color:#5f9158!important;
+  font-style:normal!important;
+}
+
+.hero-offer-row{
+  width:min(620px,100%);
+  display:grid;
+  grid-template-columns:minmax(250px,1fr) 178px;
+  gap:28px;
+  align-items:center;
+  margin-bottom:25px;
+}
+
+.hero-promise{
+  margin:0!important;
+  color:#fff!important;
+  font-size:20px!important;
+  line-height:1.4!important;
+  font-weight:500;
+}
+
+.hero-price-new{
+  min-height:118px;
+  padding:10px 0 7px 25px;
+  border-left:1px solid rgba(184,214,184,.6);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  color:#fff;
+}
+
+.hero-price-new span{
+  font-size:15px;
+  font-weight:900;
+  letter-spacing:.03em;
+}
+
+.hero-price-new strong{
+  color:#68a044;
+  font-size:72px;
+  line-height:.88;
+  letter-spacing:-.045em;
+}
+
+.hero-price-new small{
+  margin-top:6px;
+  font-size:13px;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.hero-mini-trust{
+  display:flex;
+  flex-wrap:wrap;
+  gap:24px;
+  align-items:center;
+  margin:0 0 25px;
+}
+
+.hero-mini-trust>div{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  color:#fff;
+}
+
+.hero-mini-trust span{
+  color:#65a34e;
+  font-size:28px;
+  line-height:1;
+  font-weight:900;
+}
+
+.hero-mini-trust b{
+  font-size:12px;
+  line-height:1.18;
+  letter-spacing:.01em;
+}
+
+.hero-fade-actions{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.hero-main-cta,
+.hero-call-cta{
+  min-height:52px;
+  padding:0 18px;
+  border-radius:6px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:900;
+  letter-spacing:.01em;
+}
+
+.hero-main-cta{
+  background:#518d4b;
+  color:#fff;
+  border:1px solid #6ca967;
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+.hero-call-cta{
+  background:rgba(5,15,9,.52);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.75);
+}
+
+.hero-main-cta:hover,
+.hero-call-cta:hover{
+  transform:translateY(-1px);
+}
+
+.hero-fade-note{
+  margin:13px 0 0!important;
+  color:#fff!important;
+  font-size:13px!important;
+  line-height:1.5!important;
+}
+
+/* Keep the white trust strip immediately under the hero. */
+.hero-fade + .trust{
+  position:relative;
+  z-index:3;
+  border-radius:0 0 18px 18px;
+}
+
+/* Desktop heights chosen so the hero has impact without becoming huge. */
+@media (min-width:1400px) and (max-height:950px){
+  .hero.hero-fade{min-height:515px}
+  .hero-fade-content{min-height:515px;padding-top:34px;padding-bottom:28px}
+  .hero-display{font-size:clamp(58px,5vw,82px)!important;margin-bottom:18px!important}
+  .hero-offer-row{margin-bottom:19px}
+  .hero-mini-trust{margin-bottom:19px}
+}
+
+/* Tablet: retain the fade, but let it cover more of the photo for readability. */
+@media (max-width:1100px){
+  .hero-fade .hero-shade{
+    background:linear-gradient(90deg,
+      rgba(3,13,7,.98) 0%,
+      rgba(3,14,8,.94) 38%,
+      rgba(3,14,8,.68) 58%,
+      rgba(3,14,8,.18) 82%,
+      rgba(3,14,8,0) 100%);
+  }
+  .hero-fade-content{width:62vw}
+  .hero-display{font-size:64px!important}
+  .hero-offer-row{grid-template-columns:1fr 155px;gap:18px}
+  .hero-price-new strong{font-size:60px}
+}
+
+/* Mobile gets a stronger overlay and stacked content. */
+@media (max-width:800px){
+  .hero.hero-fade{min-height:690px}
+  .hero-fade .hero-bg{
+    object-position:62% center;
+  }
+  .hero-fade .hero-shade{
+    background:
+      linear-gradient(180deg,
+        rgba(3,13,7,.93) 0%,
+        rgba(3,13,7,.88) 58%,
+        rgba(3,13,7,.68) 100%),
+      linear-gradient(90deg,rgba(3,13,7,.86),rgba(3,13,7,.24));
+  }
+  .hero-fade-content{
+    width:100%;
+    min-height:690px;
+    padding:42px 5vw 38px;
+    justify-content:flex-start;
+  }
+  .hero-location{font-size:12px}
+  .hero-display{font-size:clamp(52px,14vw,70px)!important}
+  .hero-offer-row{
+    grid-template-columns:1fr;
+    gap:13px;
+    margin-bottom:20px;
+  }
+  .hero-price-new{
+    width:190px;
+    min-height:auto;
+    padding:9px 14px;
+    border-left:0;
+    border-radius:8px;
+    background:rgba(5,38,21,.76);
+  }
+  .hero-price-new strong{font-size:58px}
+  .hero-mini-trust{gap:16px 20px}
+  .hero-fade-actions{flex-direction:column;align-items:stretch}
+  .hero-main-cta,.hero-call-cta{width:100%}
+}
+
+@media (max-width:520px){
+  .hero.hero-fade{min-height:720px}
+  .hero-fade-content{min-height:720px}
+  .hero-mini-trust>div{width:calc(50% - 10px)}
+}
+
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"Howard Hauling","legalName":"Double M Solutions LLC","description":"Veteran-owned junk removal serving Howard County and nearby Maryland communities.","telephone":"+1-240-389-2534","url":"https://doublemprojects.github.io/howard-hauling/","areaServed":["Howard County, Maryland","Columbia, Maryland","Ellicott City, Maryland","Elkridge, Maryland","Laurel, Maryland","Jessup, Maryland","Savage, Maryland","Clarksville, Maryland","Fulton, Maryland"],"image":"https://doublemprojects.github.io/howard-hauling/hero-truck.png"}
@@ -130,7 +413,52 @@ details[open] summary::after{content:"−"}
 <body>
 <header class="site-header"><a class="brand" href="#top" aria-label="Howard Hauling home"><span class="brand-main">HOWARD <b>HAULING</b></span><span class="brand-sub">VETERAN OWNED • HOWARD COUNTY, MD</span></a><nav class="nav" aria-label="Primary navigation"><a href="#take">What We Take</a><a href="#area">Service Area</a><a href="#faq">FAQ</a><a class="phone" href="tel:+12403892534">(240) 389-2534</a><a class="btn" href="sms:+12403892534">GET A FREE QUOTE</a></nav></header>
 <main id="top">
-<section class="hero"><div class="hero-inner"><div class="hero-copy"><p class="eyebrow">Junk removal in Columbia &amp; Howard County, MD</p><div class="hero-price"><span>STARTING AT</span><strong>$99</strong><small>for qualifying pickups*</small></div><h1>Junk gone.<br><em>Done right.</em></h1><p>Furniture, appliances, household junk, garage clutter, cleanouts and yard debris — loaded and hauled away without the hassle.</p><div class="hero-actions"><a class="btn" href="sms:+12403892534">TEXT PHOTOS FOR A FREE QUOTE</a><a class="btn secondary" href="tel:+12403892534">CALL (240) 389-2534</a></div><p class="hero-note">Fastest quote: text 2–3 clear photos + your location to <a href="sms:+12403892534">(240) 389-2534</a>.</p></div><div class="hero-visual"><img src="hero-truck.png" alt="Howard Hauling pickup truck and utility trailer loaded for a junk removal job" width="589" height="433" fetchpriority="high"></div></div></section>
+<section class="hero hero-fade">
+  <img class="hero-bg" src="hero-truck.png"
+       alt="Howard Hauling pickup truck and utility trailer loaded for a junk removal job"
+       fetchpriority="high">
+
+  <div class="hero-shade" aria-hidden="true"></div>
+
+  <div class="hero-fade-content">
+    <p class="hero-location">JUNK REMOVAL IN COLUMBIA &amp; HOWARD COUNTY, MD</p>
+
+    <h1 class="hero-display">
+      <span>JUNK GONE.</span>
+      <em>DONE RIGHT.</em>
+    </h1>
+
+    <div class="hero-offer-row">
+      <p class="hero-promise">
+        Upfront pricing. Fast response.<br>
+        We load it. You relax.
+      </p>
+
+      <div class="hero-price-new" aria-label="Starting at 99 dollars for qualifying pickups">
+        <span>STARTING AT</span>
+        <strong>$99</strong>
+        <small>for qualifying pickups*</small>
+      </div>
+    </div>
+
+    <div class="hero-mini-trust" aria-label="Howard Hauling highlights">
+      <div><span>★</span><b>VETERAN<br>OWNED</b></div>
+      <div><span>⌖</span><b>LOCAL &amp;<br>RELIABLE</b></div>
+      <div><span>✓</span><b>INSURED</b></div>
+      <div><span>$</span><b>UPFRONT<br>PRICING</b></div>
+    </div>
+
+    <div class="hero-fade-actions">
+      <a class="hero-main-cta" href="sms:+12403892534">▣ &nbsp; TEXT PHOTOS FOR A FREE QUOTE</a>
+      <a class="hero-call-cta" href="tel:+12403892534">☎ &nbsp; CALL (240) 389-2534</a>
+    </div>
+
+    <p class="hero-fade-note">
+      Send 2–3 photos of your junk and your location.<br>
+      Get an upfront quote fast.
+    </p>
+  </div>
+</section>
 <section class="trust" aria-label="Why choose Howard Hauling"><div><span class="qicon">★</span><b>Veteran Owned</b><small>Proudly served.</small></div><div><span class="qicon">$</span><b>Upfront Pricing</b><small>You know the price first.</small></div><div><span class="qicon">●</span><b>Howard County Local</b><small>Based in Columbia.</small></div><div><span class="qicon">✓</span><b>No Hidden Fees</b><small>What we quote is what you pay.</small></div></section>
 <section class="process" id="how"><div class="process-inner"><div class="process-copy"><p class="eyebrow">How it works</p><h2 class="section-title">Three steps.<br>Zero hassle.</h2><p class="script">We handle it all.</p><p class="lead">From your first message to the final pickup, the process stays simple.</p><div class="mini-benefits"><div><span>⚡</span><p><b>Fast &amp; easy</b><small>Start with a few photos</small></p></div><div><span>✓</span><p><b>Upfront pricing</b><small>No surprises before we start</small></p></div><div><span>★</span><p><b>Veteran owned</b><small>Local Howard County business</small></p></div></div></div><div class="steps"><article class="step"><div class="step-num">1</div><div class="step-photo"><img src="step-send-photos.jpg" alt="Phone showing photos of household junk ready to text for a quote" loading="lazy"><div class="step-badge">📷</div></div><h3>Send Photos</h3><p>Text your location and 2–3 clear photos of what needs to go.</p><div class="step-foot">Takes less than a minute</div></article><article class="step"><div class="step-num">2</div><div class="step-photo"><img src="step-get-price.jpg" alt="Quote clipboard representing an upfront junk removal price" loading="lazy"><div class="step-badge">$</div></div><h3>Get Your Price</h3><p>We review the job and send you a clear, upfront price before work begins.</p><div class="step-foot">Upfront &amp; transparent</div></article><article class="step"><div class="step-num">3</div><div class="step-photo"><img src="step-haul-away.jpg" alt="Pickup truck loaded with furniture for hauling" loading="lazy"><div class="step-badge">✓</div></div><h3>We Haul It Away</h3><p>You point out what goes. We handle the loading, hauling and removal.</p><div class="step-foot">You get your space back</div></article></div></div></section>
 <section class="take" id="take"><div class="take-inner"><div class="take-head"><div><p class="eyebrow">What we take</p><h2 class="section-title">Common junk we remove.</h2></div><p>If it’s bulky, cluttering your space, or needs a dump run, there’s a good chance we can help. Don’t see your item? Text us a photo.</p></div><div class="take-grid"><article class="take-card"><div class="take-icon">🛋</div><div><h3>Furniture &amp; Mattresses</h3><p>Couches, chairs, tables, dressers, bed frames, mattresses and box springs.</p></div></article><article class="take-card"><div class="take-icon">▦</div><div><h3>Appliances &amp; Bulky Items</h3><p>Accepted household appliances and other large items that are difficult to move yourself.</p></div></article><article class="take-card"><div class="take-icon">📦</div><div><h3>Household Junk &amp; Clutter</h3><p>Boxes, unwanted belongings, garage clutter, basement junk and general household debris.</p></div></article><article class="take-card"><div class="take-icon">⌂</div><div><h3>Move-Outs &amp; Cleanouts</h3><p>Rental units, garages, basements and smaller move-out or property cleanout jobs.</p></div></article><article class="take-card"><div class="take-icon">🌿</div><div><h3>Yard Debris</h3><p>Branches, brush and accepted outdoor cleanup debris that needs to be hauled away.</p></div></article><article class="take-card not-sure"><div class="take-icon">?</div><div><h3>Not sure?</h3><p>Text a picture to <strong>(240) 389-2534</strong>. We’ll tell you if we can take it.</p></div></article></div><div class="eco"><div class="eco-icon">♻</div><div><strong>Donate &amp; recycle when practical.</strong><p>Usable items are donated or recycled whenever practical, helping keep good items out of the waste stream.</p></div></div></div></section>
