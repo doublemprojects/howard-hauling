@@ -30,7 +30,7 @@ nav .phone{font-size:17px}
 
 .hero{padding:34px 5vw 0;background:var(--cream)}
 .hero-img{
-  display:block;width:100%;max-width:1536px;margin:auto;border-radius:18px 18px 0 0;
+  display:block;width:100%;height:auto;max-width:1536px;margin:auto;border-radius:18px;
   box-shadow:0 18px 45px rgba(21,43,29,.12)
 }
 .hero-mobile-cta{display:none}
@@ -79,6 +79,8 @@ nav .phone{font-size:17px}
   margin-bottom:22px;position:relative
 }
 .step-photo svg{width:100%;height:100%}
+.step-photo.photo-real{background:#eef5ee}
+.step-photo.photo-real img{width:100%;height:100%;object-fit:cover;display:block}
 .step-badge{
   position:absolute;left:16px;bottom:16px;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;
   background:var(--forest);color:#fff;font-size:22px;font-weight:900;box-shadow:0 4px 12px rgba(0,0,0,.12)
@@ -185,12 +187,6 @@ footer a{font-size:15px;font-weight:900}
 <section class="hero">
   <img class="hero-img" src="assets/howard-hauling-hero.png" alt="Howard Hauling veteran-owned junk removal in Howard County, with truck and trailer, starting at $99">
   <div class="hero-mobile-cta"><a href="sms:+12403892534">GET A FREE QUOTE — TEXT PHOTOS</a></div>
-  <div class="quick-trust">
-    <div><span class="qicon">★</span><b>Veteran Owned</b><small>Local small business</small></div>
-    <div><span class="qicon">$</span><b>Upfront Pricing</b><small>You know the price first</small></div>
-    <div><span class="qicon">⌂</span><b>Howard County Local</b><small>Based in Columbia</small></div>
-    <div><span class="qicon">✓</span><b>No Hidden Fees</b><small>What we quote is what you pay</small></div>
-  </div>
 </section>
 
 <section class="process">
@@ -210,23 +206,7 @@ footer a{font-size:15px;font-weight:900}
     <div class="steps">
       <article class="step">
         <div class="step-num">1</div>
-        <div class="step-photo">
-          <svg viewBox="0 0 320 265" role="img" aria-label="Phone showing photos of junk for a quote">
-            <rect width="320" height="265" fill="#eef5ee"/>
-            <path d="M208 25c30 7 54 26 64 53-6 33-29 58-61 67-31-7-54-30-62-61 5-28 27-51 59-59z" fill="#dceadc"/>
-            <rect x="87" y="17" width="146" height="230" rx="25" fill="#1b211d"/>
-            <rect x="97" y="31" width="126" height="201" rx="18" fill="#fff"/>
-            <rect x="107" y="55" width="106" height="121" rx="8" fill="#d6dfd4"/>
-            <rect x="121" y="103" width="78" height="43" rx="9" fill="#d9894f"/>
-            <rect x="130" y="85" width="26" height="26" rx="7" fill="#edaa7b"/>
-            <rect x="165" y="85" width="26" height="26" rx="7" fill="#edaa7b"/>
-            <rect x="105" y="151" width="34" height="25" fill="#d5b873"/>
-            <rect x="181" y="137" width="24" height="39" fill="#eef2ed" stroke="#54745d" stroke-width="3"/>
-            <circle cx="160" cy="203" r="18" fill="#fff" stroke="#b9c3ba" stroke-width="4"/>
-            <rect x="137" y="40" width="46" height="5" rx="2" fill="#4a514d"/>
-          </svg>
-          <div class="step-badge">📷</div>
-        </div>
+        <div class="step-photo photo-real"><img src="assets/step-send-photos.jpg" alt="Phone showing junk photos ready to text for a quote"><div class="step-badge">📷</div></div>
         <h3>Send Photos</h3>
         <p>Text your location and 2–3 clear photos of what needs to go.</p>
         <div class="step-foot">Takes less than a minute</div>
@@ -234,21 +214,7 @@ footer a{font-size:15px;font-weight:900}
 
       <article class="step">
         <div class="step-num">2</div>
-        <div class="step-photo">
-          <svg viewBox="0 0 320 265" role="img" aria-label="Simple upfront junk removal quote">
-            <rect width="320" height="265" fill="#eef5ee"/>
-            <rect x="73" y="34" width="174" height="194" rx="16" fill="#fff" stroke="#285a3d" stroke-width="5"/>
-            <rect x="126" y="18" width="68" height="28" rx="8" fill="#285a3d"/>
-            <circle cx="160" cy="17" r="12" fill="none" stroke="#285a3d" stroke-width="6"/>
-            <text x="160" y="86" text-anchor="middle" font-family="Arial" font-size="18" font-weight="900" fill="#638d6d">YOUR PRICE</text>
-            <text x="160" y="132" text-anchor="middle" font-family="Arial" font-size="48" font-weight="900" fill="#285a3d">$</text>
-            <circle cx="110" cy="162" r="10" fill="#dcebdd"/><path d="M104 162l4 4 8-9" fill="none" stroke="#285a3d" stroke-width="3"/>
-            <rect x="128" y="157" width="77" height="9" rx="4" fill="#dfe7df"/>
-            <circle cx="110" cy="188" r="10" fill="#dcebdd"/><path d="M104 188l4 4 8-9" fill="none" stroke="#285a3d" stroke-width="3"/>
-            <rect x="128" y="183" width="62" height="9" rx="4" fill="#dfe7df"/>
-          </svg>
-          <div class="step-badge">$</div>
-        </div>
+        <div class="step-photo photo-real"><img src="assets/step-get-price.jpg" alt="Polished quote clipboard"><div class="step-badge">$</div></div>
         <h3>Get Your Price</h3>
         <p>We review the job and send you a clear, upfront price before work begins.</p>
         <div class="step-foot">Upfront & transparent</div>
@@ -256,23 +222,7 @@ footer a{font-size:15px;font-weight:900}
 
       <article class="step">
         <div class="step-num">3</div>
-        <div class="step-photo">
-          <svg viewBox="0 0 320 265" role="img" aria-label="Two-door pickup truck and junk trailer hauling items away">
-            <rect width="320" height="265" fill="#eef5ee"/>
-            <circle cx="250" cy="48" r="25" fill="#efce6f"/>
-            <path d="M0 205c75-24 152 8 320-9v69H0z" fill="#c4d4c4"/>
-            <g transform="translate(24 95)">
-              <path d="M18 73h116l23-42h52l48 42h18v42H15z" fill="#263f2e"/>
-              <path d="M166 39h37l34 33h-71z" fill="#698572"/>
-              <circle cx="70" cy="117" r="23" fill="#17231b"/><circle cx="70" cy="117" r="11" fill="#a7afa9"/>
-              <circle cx="222" cy="117" r="23" fill="#17231b"/><circle cx="222" cy="117" r="11" fill="#a7afa9"/>
-              <rect x="24" y="34" width="104" height="40" rx="6" fill="#334d39"/>
-              <rect x="45" y="5" width="31" height="30" fill="#d5b772"/>
-              <rect x="78" y="-5" width="38" height="40" fill="#e6ca90"/>
-            </g>
-          </svg>
-          <div class="step-badge">✓</div>
-        </div>
+        <div class="step-photo photo-real"><img src="assets/step-haul-away.jpg" alt="Pickup loaded with furniture for hauling"><div class="step-badge">✓</div></div>
         <h3>We Haul It Away</h3>
         <p>You point out what goes. We handle the loading, hauling and removal.</p>
         <div class="step-foot">You get your space back</div>
