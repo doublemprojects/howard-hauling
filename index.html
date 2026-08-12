@@ -405,6 +405,68 @@ details[open] summary::after{content:"−"}
   .hero-mini-trust>div{width:calc(50% - 10px)}
 }
 
+
+/* FINAL HERO POLISH — based on 100% zoom screenshot */
+@media (min-width:1101px){
+  /* Slightly taller: trust strip visible, How It Works markers below the fold */
+  .hero.hero-fade{min-height:610px}
+  .hero-fade-content{
+    min-height:610px;
+    padding-top:42px;
+    padding-bottom:34px;
+  }
+
+  /* Show more pickup / less trailer while retaining the existing artwork. */
+  .hero-fade .hero-bg{
+    object-fit:cover;
+    object-position:42% center;
+  }
+
+  /* Less ultra-heavy than Impact while staying bold/condensed. */
+  .hero-display{
+    font-family:"Arial Narrow","Roboto Condensed","Helvetica Neue",Arial,sans-serif!important;
+    font-stretch:condensed;
+    font-weight:800!important;
+    letter-spacing:-.045em!important;
+    line-height:.90!important;
+    font-size:clamp(58px,4.7vw,80px)!important;
+    margin-bottom:25px!important;
+  }
+
+  /* Bring the price noticeably closer to the promise copy. */
+  .hero-offer-row{
+    width:535px;
+    grid-template-columns:285px 175px;
+    gap:12px;
+    margin-bottom:24px;
+  }
+  .hero-price-new{
+    padding-left:17px;
+    min-height:104px;
+  }
+  .hero-price-new strong{font-size:66px}
+
+  .hero-mini-trust{margin-bottom:24px}
+}
+
+/* Typical 1080p desktop: maintain the intended first-screen composition. */
+@media (min-width:1400px) and (min-height:900px){
+  .hero.hero-fade{min-height:620px}
+  .hero-fade-content{min-height:620px}
+}
+
+/* Do not let the earlier short-height rule shrink this polished desktop hero. */
+@media (min-width:1400px) and (max-height:950px){
+  .hero.hero-fade{min-height:600px}
+  .hero-fade-content{min-height:600px;padding-top:38px;padding-bottom:32px}
+  .hero-display{
+    font-size:clamp(58px,4.7vw,78px)!important;
+    margin-bottom:23px!important
+  }
+  .hero-offer-row{margin-bottom:22px}
+  .hero-mini-trust{margin-bottom:22px}
+}
+
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"Howard Hauling","legalName":"Double M Solutions LLC","description":"Veteran-owned junk removal serving Howard County and nearby Maryland communities.","telephone":"+1-240-389-2534","url":"https://doublemprojects.github.io/howard-hauling/","areaServed":["Howard County, Maryland","Columbia, Maryland","Ellicott City, Maryland","Elkridge, Maryland","Laurel, Maryland","Jessup, Maryland","Savage, Maryland","Clarksville, Maryland","Fulton, Maryland"],"image":"https://doublemprojects.github.io/howard-hauling/hero-truck.png"}
