@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+
+# PRE-LAUNCH: replace this file with robots-live.txt when the business/site is ready to go public.

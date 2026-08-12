@@ -1,0 +1,11 @@
+HOWARD HAULING — GO-LIVE CHECKLIST
+
+1. Confirm Double M Solutions LLC is officially active and the insurance policy is active before publishing claims that depend on them.
+2. Replace robots.txt with the contents of robots-live.txt.
+3. Confirm the final public URL. If it changes from https://doublemprojects.github.io/howard-hauling/, update the URL in index.html JSON-LD, robots-live.txt, and sitemap.xml.
+4. Upload ALL files in this folder to the repository root. Keep the image filenames unchanged.
+5. Open the live site on desktop and phone. Test Call and Text buttons.
+6. In Google Search Console, add/verify the site, submit sitemap.xml, and request indexing for the homepage.
+7. Keep photos, pricing, service area, insurance/business status, and accepted-item claims accurate as the business changes.
+
+No public business hours are advertised. Service area copy is Howard County + nearby areas. Donation/recycling language says “whenever practical.”

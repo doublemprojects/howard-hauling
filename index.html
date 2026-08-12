@@ -2,319 +2,59 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Veteran-owned junk removal in Columbia and Howard County, Maryland. Furniture, appliances, household junk, cleanouts and yard debris. Pickups starting at $99.">
-<title>Howard Hauling | Junk Removal in Columbia & Howard County, MD</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1f5b3d">
+<meta name="description" content="Veteran-owned junk removal serving Columbia, Howard County, and nearby Maryland communities. Furniture, appliances, cleanouts, yard debris and more. Qualifying pickups start at $99.">
+<title>Howard Hauling | Junk Removal in Howard County, MD</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Howard Hauling | Junk Removal in Howard County, MD">
+<meta property="og:description" content="Junk gone. Done right. Veteran-owned junk removal serving Howard County and nearby areas. Text photos for a fast, upfront quote.">
+<meta property="og:image" content="hero-truck.png">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQ3yn5MZjoZsQ+g9D3c5Z5a3Q1mW0YQ=" crossorigin="">
 <style>
-:root{
-  --ink:#132119;--forest:#23563a;--forest2:#173d29;--green:#5f8d68;--lime:#86ad38;
-  --mint:#eef5ee;--cream:#f7f3ea;--paper:#fff;--muted:#617067;--line:#dce4dc;--sand:#eee5d4
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;color:var(--ink);background:#fff}
-a{color:inherit}
-.site-header{
-  min-height:88px;padding:12px 6vw;display:flex;align-items:center;justify-content:space-between;
-  position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line)
-}
-.brand{text-decoration:none;display:flex;flex-direction:column}
-.brand-main{font-size:27px;font-weight:900;letter-spacing:.02em}
-.brand-main b{color:var(--green)}
-.brand-sub{margin-top:5px;font-size:12px;font-weight:800;color:#647168;letter-spacing:.04em}
-nav{display:flex;align-items:center;gap:24px}
-nav a{text-decoration:none;font-size:15px;font-weight:800}
-nav .phone{font-size:17px}
-.nav-cta{background:var(--forest);color:#fff!important;padding:14px 18px;border-radius:9px}
-
-.hero{padding:64px 6vw;background:var(--cream);display:grid;grid-template-columns:minmax(420px,.9fr) minmax(560px,1.1fr);gap:58px;align-items:center}
-.hero-copy{max-width:650px}
-.hero-copy .eyebrow{margin:0 0 18px}
-.hero-price{display:inline-flex;flex-direction:column;background:var(--forest);color:#fff;border-radius:10px;padding:11px 18px 12px;margin-bottom:18px;box-shadow:0 8px 20px rgba(20,58,39,.12)}
-.hero-price span{font-size:11px;font-weight:900;letter-spacing:.09em}.hero-price strong{font-size:46px;line-height:.92}.hero-price small{font-size:12px;font-weight:800;margin-top:4px}
-.hero h1{font-size:clamp(58px,5vw,84px);line-height:.91;letter-spacing:-.055em;margin:0 0 22px}.hero h1 em{font-style:normal;color:var(--green)}
-.hero-copy>p:not(.eyebrow){font-size:18px;line-height:1.55;color:var(--muted);max-width:610px}
-.hero-cta{display:inline-flex;margin-top:10px;background:var(--forest);color:#fff;text-decoration:none;border-radius:8px;padding:16px 22px;font-size:14px;font-weight:900}
-.hero-note{font-size:13px!important;margin-top:13px}.hero-note a{font-weight:900;color:var(--forest)}
-.hero-visual{width:100%;height:auto;border-radius:18px;overflow:hidden;box-shadow:0 22px 50px rgba(21,43,29,.16);background:#142218;position:relative;line-height:0}
-.hero-img{display:block;width:100%;height:auto;max-width:100%;object-fit:contain;object-position:center;transform:none}
-.quick-trust{max-width:none;margin:0;padding:22px 6vw;background:#fff;display:grid;grid-template-columns:repeat(4,1fr);border-radius:0;border:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-
-.quick-trust{
-  max-width:1536px;margin:0 auto;padding:24px 3vw;background:#fff;display:grid;grid-template-columns:repeat(4,1fr);
-  border-radius:0 0 18px 18px;border:1px solid #ece9df;border-top:0
-}
-.quick-trust>div{display:grid;grid-template-columns:48px 1fr;grid-template-rows:auto auto;gap:2px 13px;padding:4px 26px;border-right:1px solid var(--line)}
-.quick-trust>div:last-child{border:0}
-.qicon{grid-row:1/3;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--mint);color:var(--forest);font-size:22px;font-weight:900}
-.quick-trust b{font-size:17px}
-.quick-trust small{font-size:14px;color:var(--muted)}
-
-.process{
-  padding:100px 6vw;background:#fbfaf7
-}
-.process-wrap{max-width:1500px;margin:auto;display:grid;grid-template-columns:.6fr 1.4fr;gap:5vw;align-items:start}
-.process-copy{padding-top:10px}
-.eyebrow{font-size:13px;font-weight:900;letter-spacing:.14em;color:var(--forest)}
-.process h2,.take h2,.price h2,.area h2,.final h2{
-  font-size:clamp(44px,5vw,70px);line-height:.97;letter-spacing:-.05em;margin:14px 0 18px
-}
-.script{font-family:Georgia,serif;font-style:italic;font-size:37px;color:var(--forest);margin:0 0 20px}
-.process-copy>p:not(.eyebrow):not(.script){font-size:18px;line-height:1.6;color:var(--muted)}
-.mini-benefits{display:grid;gap:18px;margin-top:28px}
-.mini-benefits div{display:grid;grid-template-columns:42px 1fr;gap:12px;align-items:center}
-.mini-benefits span{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--mint);color:var(--forest);font-weight:900}
-.mini-benefits b{display:block;font-size:16px}
-.mini-benefits small{font-size:14px;color:var(--muted)}
-
-.steps{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.steps:before{
-  content:"";position:absolute;left:9%;right:9%;top:-30px;height:2px;border-top:2px dashed #7fa28a
-}
-.step{
-  position:relative;background:#fff;border:1px solid var(--line);border-radius:20px;padding:16px;
-  box-shadow:0 12px 30px rgba(26,49,33,.06)
-}
-.step-num{
-  position:absolute;top:-54px;left:50%;transform:translateX(-50%);width:54px;height:54px;border-radius:50%;
-  display:grid;place-items:center;background:var(--forest);color:#fff;font-size:18px;font-weight:900
-}
-.step-photo{
-  height:265px;border-radius:15px;background:var(--mint);overflow:hidden;display:grid;place-items:center;
-  margin-bottom:22px;position:relative
-}
-.step-photo svg{width:100%;height:100%}
-.step-photo.photo-real{background:#eef5ee}
-.step-photo.photo-real img{width:100%;height:100%;object-fit:cover;display:block}
-.step-badge{
-  position:absolute;left:16px;bottom:16px;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;
-  background:var(--forest);color:#fff;font-size:22px;font-weight:900;box-shadow:0 4px 12px rgba(0,0,0,.12)
-}
-.step h3{font-size:24px;margin:0 0 10px;text-align:center}
-.step p{font-size:16px;line-height:1.55;color:var(--muted);text-align:center;margin:0 6px 18px}
-.step-foot{
-  background:var(--mint);border-radius:10px;text-align:center;padding:12px;font-size:14px;font-weight:800;color:#3e5144
-}
-
-.take{padding:100px 6vw;max-width:1500px;margin:auto}
-.take-head{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:end;margin-bottom:42px}
-.take-head>p{font-size:18px;line-height:1.6;color:var(--muted)}
-.take-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.take-card{border:1px solid var(--line);border-radius:18px;padding:28px;display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:center;background:#fff}
-.take-card h3{font-size:22px;margin:0 0 8px}
-.take-card p{font-size:16px;line-height:1.55;color:var(--muted);margin:0}
-.take-icon{width:88px;height:88px;border-radius:18px;background:var(--cream);display:grid;place-items:center;font-size:38px}
-.take-card strong{color:var(--forest)}
-.not-sure{background:var(--cream)}
-
-.price{
-  margin:0 6vw 100px;padding:58px;background:var(--forest);color:#fff;border-radius:22px;display:grid;grid-template-columns:.68fr 1.32fr;gap:72px;align-items:center
-}
-.price-card{background:#f4efe4;color:var(--forest);border-radius:18px;padding:34px;text-align:center}
-.price-card small{font-size:15px;font-weight:900;letter-spacing:.1em}
-.price-card strong{display:block;font-size:110px;line-height:.9;margin:10px 0}
-.price-card b{font-size:18px}
-.price-card p{font-size:14px;color:#4f5e54;margin:11px 0 0}
-.pale{color:#cee0d1}
-.price>div:last-child>p:not(.eyebrow){font-size:19px;line-height:1.6;color:#e3eee5}
-.price .fine{font-size:14px!important;color:#bdcdbf!important}
-
-.area{padding:90px 6vw;background:var(--cream);display:grid;grid-template-columns:.78fr 1.22fr;gap:6vw;align-items:center}
-.area-copy>p:not(.eyebrow){font-size:18px;line-height:1.6;color:var(--muted)}
-.cities{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}
-.cities span{padding:10px 13px;border:1px solid #ccd6cd;border-radius:999px;background:#fff;font-size:14px;font-weight:800}
-.map-card{background:#fff;padding:12px;border-radius:18px;box-shadow:0 18px 45px rgba(30,54,38,.11)}
-.map-head{display:flex;justify-content:space-between;gap:18px;padding:10px 10px 16px}
-.map-head b{font-size:16px}.map-head span{font-size:13px;color:var(--muted)}
-#map{height:450px;border-radius:12px;z-index:1}
-#mapStatus{padding:9px 8px 2px;font-size:12px;color:var(--muted)}
-
-.final{padding:76px 6vw;background:var(--forest2);color:#fff;display:grid;grid-template-columns:1fr auto;gap:45px;align-items:center}
-.final h2{margin:8px 0}
-.final p:not(.eyebrow){font-size:18px;color:#d8e4da}
-.final-btn{min-width:250px;background:#91b940;color:#142117;text-decoration:none;border-radius:12px;padding:18px 28px;text-align:center;font-size:15px;font-weight:900}
-.final-btn span{display:block;font-size:19px;margin-top:4px}
-
-footer{padding:34px 6vw;background:#0e1711;color:#fff;display:grid;grid-template-columns:1.2fr 1fr auto auto;gap:24px;align-items:center;font-size:13px}
-footer>div:first-child{display:flex;flex-direction:column;gap:5px}
-footer>div:first-child b{font-size:18px}
-footer>div:first-child span,footer>div:nth-child(2),footer>div:last-child{color:#9eaea1}
-footer a{font-size:15px;font-weight:900}
-
-@media(max-width:1050px){
-  nav a:not(.phone):not(.nav-cta){display:none}
-  .process-wrap,.area,.price{grid-template-columns:1fr}
-  .steps{margin-top:60px}
-  .take-head{grid-template-columns:1fr;gap:18px}
-  .quick-trust{grid-template-columns:1fr 1fr}
-  .quick-trust>div:nth-child(2){border-right:0}
-  footer{grid-template-columns:1fr 1fr}
-}
-@media(max-width:720px){
-  .site-header{min-height:78px;padding:10px 5vw}
-  .brand-main{font-size:20px}.brand-sub{font-size:10px}
-  nav .phone{display:none}.nav-cta{font-size:12px;padding:11px 12px}
-  .hero{padding:18px 3vw 0}.hero-img{border-radius:12px}
-  .hero-mobile-cta{display:block;padding:16px 0 4px;text-align:center}
-  .hero-mobile-cta a{display:block;background:var(--forest);color:#fff;text-decoration:none;border-radius:9px;padding:15px;font-weight:900}
-  .quick-trust{grid-template-columns:1fr;padding:10px 5vw}
-  .quick-trust>div{border-right:0;border-bottom:1px solid var(--line);padding:14px 4px}
-  .process,.take,.area{padding:70px 5vw}
-  .process-wrap{grid-template-columns:1fr}
-  .script{font-size:30px}
-  .steps{grid-template-columns:1fr;margin-top:64px}.steps:before{display:none}
-  .step{margin-bottom:38px}.step-photo{height:240px}
-  .take-grid{grid-template-columns:1fr}
-  .take-card{grid-template-columns:78px 1fr;padding:22px}.take-icon{width:70px;height:70px;font-size:32px}
-  .price{margin:0 5vw 70px;padding:36px 25px}.price-card strong{font-size:82px}
-  .map-head{flex-direction:column;gap:4px}#map{height:340px}
-  .final{padding:64px 5vw;grid-template-columns:1fr}.final-btn{width:100%}
-  footer{grid-template-columns:1fr;text-align:center}
-}
-
-@media(max-width:1100px){.hero{grid-template-columns:1fr 1fr;gap:34px;padding:52px 5vw}.hero-visual{height:auto}.hero h1{font-size:58px}}
-@media(max-width:800px){.hero{grid-template-columns:1fr;padding:42px 5vw 48px}.hero-visual{height:auto;aspect-ratio:auto}.hero-img{width:100%;height:auto;object-fit:contain;transform:none;object-position:center}.quick-trust{grid-template-columns:1fr 1fr;padding:10px 5vw}}
-@media(max-width:520px){.hero h1{font-size:52px}.hero-cta{width:100%;justify-content:center}.quick-trust{grid-template-columns:1fr}.hero-visual{aspect-ratio:auto}}
+:root{--ink:#11231a;--forest:#205c3d;--deep:#123d29;--green:#65926f;--accent:#82a93c;--mint:#edf5ee;--cream:#f8f4ea;--paper:#fff;--muted:#5d6e64;--line:#dce5dd;--shadow:0 18px 45px rgba(20,52,34,.11)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff}img{max-width:100%}a{color:inherit}.wrap{max-width:1500px;margin:auto}.eyebrow{font-size:13px;font-weight:900;letter-spacing:.14em;color:var(--forest);text-transform:uppercase}.site-header{min-height:82px;padding:11px max(5vw,24px);display:flex;align-items:center;justify-content:space-between;gap:24px;position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}.brand{text-decoration:none;display:flex;flex-direction:column}.brand-main{font-size:27px;font-weight:900;letter-spacing:.02em}.brand-main b{color:var(--green)}.brand-sub{margin-top:4px;font-size:11px;font-weight:800;color:#68766d;letter-spacing:.04em}.nav{display:flex;align-items:center;gap:25px}.nav a{text-decoration:none;font-size:15px;font-weight:800}.nav .phone{font-size:17px}.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border:0;border-radius:9px;background:var(--forest);color:#fff;font-weight:900;padding:15px 20px;cursor:pointer}.nav .btn{padding:14px 18px}.hero{background:var(--cream);padding:64px max(5vw,24px)}.hero-inner{max-width:1500px;margin:auto;display:grid;grid-template-columns:minmax(390px,.78fr) minmax(560px,1.22fr);gap:60px;align-items:center}.hero-copy{max-width:630px}.hero-price{display:inline-flex;flex-direction:column;background:var(--forest);color:#fff;border-radius:11px;padding:11px 18px 12px;margin:16px 0 20px;box-shadow:0 9px 22px rgba(20,58,39,.14)}.hero-price span{font-size:11px;font-weight:900;letter-spacing:.09em}.hero-price strong{font-size:46px;line-height:.92}.hero-price small{font-size:12px;font-weight:800;margin-top:4px}.hero h1{font-size:clamp(58px,5vw,84px);line-height:.91;letter-spacing:-.055em;margin:0 0 22px}.hero h1 em{font-style:normal;color:var(--green)}.hero-copy>p:not(.eyebrow){font-size:18px;line-height:1.55;color:var(--muted);max-width:610px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.btn.secondary{background:#fff;color:var(--forest);border:1px solid #b9c9bd}.hero-note{font-size:13px!important;margin:12px 0 0}.hero-note a{font-weight:900;color:var(--forest)}.hero-visual{overflow:hidden;border-radius:18px;box-shadow:0 22px 50px rgba(21,43,29,.16);background:#15241a;line-height:0}.hero-visual img{display:block;width:100%;height:auto}.trust{max-width:1500px;margin:auto;background:#fff;display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #ece9df;border-top:0;border-radius:0 0 18px 18px}.trust>div{display:grid;grid-template-columns:46px 1fr;grid-template-rows:auto auto;gap:2px 12px;padding:22px 25px;border-right:1px solid var(--line)}.trust>div:last-child{border-right:0}.qicon{grid-row:1/3;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--mint);color:var(--forest);font-size:20px;font-weight:900}.trust b{font-size:16px}.trust small{font-size:13px;color:var(--muted)}
+.process{padding:100px max(5vw,24px);background:#fbfaf7}.process-inner{max-width:1500px;margin:auto;display:grid;grid-template-columns:.6fr 1.4fr;gap:5vw;align-items:start}.process-copy{padding-top:12px}.section-title{font-size:clamp(44px,5vw,70px);line-height:.97;letter-spacing:-.05em;margin:14px 0 18px}.script{font-family:Georgia,serif;font-style:italic;font-size:37px;color:var(--forest);margin:0 0 20px}.lead{font-size:18px;line-height:1.6;color:var(--muted)}.mini-benefits{display:grid;gap:18px;margin-top:28px}.mini-benefits div{display:grid;grid-template-columns:42px 1fr;gap:12px;align-items:center}.mini-benefits span{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--mint);color:var(--forest);font-weight:900}.mini-benefits p{margin:0}.mini-benefits b{display:block;font-size:16px}.mini-benefits small{font-size:14px;color:var(--muted)}.steps{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch}.steps:before{content:"";position:absolute;left:9%;right:9%;top:-30px;border-top:2px dashed #7fa28a}.step{position:relative;background:#fff;border:1px solid var(--line);border-radius:20px;padding:16px;box-shadow:0 12px 30px rgba(26,49,33,.06);display:flex;flex-direction:column;min-width:0}.step-num{position:absolute;top:-54px;left:50%;transform:translateX(-50%);width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:var(--forest);color:#fff;font-size:18px;font-weight:900}.step-photo{height:265px;border-radius:15px;background:var(--mint);overflow:hidden;margin-bottom:22px;position:relative}.step-photo img{display:block;width:100%;height:100%;object-fit:cover}.step:nth-child(1) .step-photo img{object-position:center}.step:nth-child(2) .step-photo img{object-position:center center}.step:nth-child(3) .step-photo img{object-position:center}.step-badge{position:absolute;left:16px;bottom:16px;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--forest);color:#fff;font-size:20px;font-weight:900;box-shadow:0 4px 12px rgba(0,0,0,.12)}.step h3{font-size:24px;margin:0 0 10px;text-align:center}.step p{font-size:16px;line-height:1.55;color:var(--muted);text-align:center;margin:0 6px 18px}.step-foot{margin-top:auto;background:var(--mint);border-radius:10px;text-align:center;padding:12px;font-size:14px;font-weight:800;color:#3e5144;min-height:42px;display:grid;place-items:center}
+.take{padding:100px max(5vw,24px)}.take-inner{max-width:1500px;margin:auto}.take-head{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:end;margin-bottom:42px}.take-head p{font-size:18px;line-height:1.6;color:var(--muted)}.take-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.take-card{border:1px solid var(--line);border-radius:18px;padding:28px;display:grid;grid-template-columns:90px 1fr;gap:22px;align-items:center;background:#fff}.take-card h3{font-size:22px;margin:0 0 8px}.take-card p{font-size:16px;line-height:1.55;color:var(--muted);margin:0}.take-icon{width:82px;height:82px;border-radius:18px;background:var(--cream);display:grid;place-items:center;font-size:36px}.not-sure{background:var(--cream)}.eco{margin-top:20px;padding:24px 28px;border-radius:18px;background:var(--mint);display:flex;gap:18px;align-items:center}.eco strong{display:block;font-size:20px;margin-bottom:5px}.eco p{margin:0;color:var(--muted);line-height:1.5}.eco-icon{font-size:34px}
+.price{max-width:1500px;margin:0 auto 100px;padding:58px;background:var(--forest);color:#fff;border-radius:22px;display:grid;grid-template-columns:.68fr 1.32fr;gap:72px;align-items:center}.price-card{background:#f4efe4;color:var(--forest);border-radius:18px;padding:34px;text-align:center}.price-card small{font-size:15px;font-weight:900;letter-spacing:.1em}.price-card strong{display:block;font-size:110px;line-height:.9;margin:10px 0}.price-card b{font-size:18px}.price-card p{font-size:14px;color:#4f5e54;margin:11px 0 0}.pale{color:#cee0d1}.price-copy>p:not(.eyebrow){font-size:19px;line-height:1.6;color:#e3eee5}.price-copy .fine{font-size:14px!important;color:#bdcdbf!important}
+.area{padding:90px max(5vw,24px);background:var(--cream)}.area-inner{max-width:1500px;margin:auto;display:grid;grid-template-columns:.78fr 1.22fr;gap:6vw;align-items:center}.area-copy>p:not(.eyebrow){font-size:18px;line-height:1.6;color:var(--muted)}.cities{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}.cities span{padding:10px 13px;border:1px solid #ccd6cd;border-radius:999px;background:#fff;font-size:14px;font-weight:800}.map-card{background:#fff;padding:12px;border-radius:18px;box-shadow:var(--shadow)}.map-head{display:flex;justify-content:space-between;gap:18px;padding:10px 10px 16px}.map-head b{font-size:16px}.map-head span{font-size:13px;color:var(--muted)}#map{height:430px;border-radius:12px;z-index:1;background:#e8efe9}#mapStatus{padding:9px 8px 2px;font-size:12px;color:var(--muted)}
+.faq{padding:100px max(5vw,24px);background:#fff}.faq-inner{max-width:1100px;margin:auto}.faq-head{text-align:center;max-width:760px;margin:0 auto 40px}.faq-head .lead{margin-bottom:0}.faq-list{display:grid;gap:12px}details{border:1px solid var(--line);border-radius:14px;background:#fff;padding:0 20px}summary{cursor:pointer;list-style:none;font-size:18px;font-weight:900;padding:20px 38px 20px 0;position:relative}summary::-webkit-details-marker{display:none}summary:after{content:"+";position:absolute;right:2px;top:15px;font-size:28px;color:var(--forest)}details[open] summary:after{content:"–"}details p{margin:0;padding:0 0 20px;color:var(--muted);font-size:16px;line-height:1.6}.final{padding:76px max(5vw,24px);background:var(--deep);color:#fff}.final-inner{max-width:1500px;margin:auto;display:grid;grid-template-columns:1fr auto;gap:45px;align-items:center}.final h2{margin:8px 0}.final p:not(.eyebrow){font-size:18px;color:#d8e4da}.final-btn{min-width:270px;background:#91b940;color:#142117}.final-btn span{display:block;font-size:19px;margin-left:7px}footer{padding:34px max(5vw,24px);background:#0e1711;color:#fff}.footer-inner{max-width:1500px;margin:auto;display:grid;grid-template-columns:1.2fr 1fr auto;gap:24px;align-items:center;font-size:13px}.footer-brand{display:flex;flex-direction:column;gap:5px}.footer-brand b{font-size:18px}.footer-brand span,.footer-area{color:#a7b5aa}.footer-links{display:flex;gap:18px;align-items:center;justify-content:flex-end}.footer-links a{font-size:14px;font-weight:900}.legal{max-width:1500px;margin:18px auto 0;padding-top:18px;border-top:1px solid #27342a;color:#8e9d91;font-size:12px;display:flex;justify-content:space-between;gap:20px}.mobile-quote{display:none}
+@media(max-width:1100px){.nav a:not(.phone):not(.btn){display:none}.hero-inner{grid-template-columns:1fr 1fr;gap:34px}.hero h1{font-size:58px}.process-inner,.area-inner,.price{grid-template-columns:1fr}.steps{margin-top:60px}.take-head{grid-template-columns:1fr;gap:18px}.trust{grid-template-columns:1fr 1fr}.trust>div:nth-child(2){border-right:0}.price{margin:0 5vw 70px}.footer-inner{grid-template-columns:1fr 1fr}.footer-links{grid-column:1/-1;justify-content:flex-start}}
+@media(max-width:800px){.site-header{min-height:74px;padding:9px 5vw}.brand-main{font-size:21px}.brand-sub{font-size:9px}.nav .phone{display:none}.nav .btn{font-size:11px;padding:11px}.hero{padding:40px 5vw 48px}.hero-inner{grid-template-columns:1fr}.hero-copy{max-width:none}.hero h1{font-size:56px}.hero-visual{order:2}.trust{grid-template-columns:1fr 1fr;margin:0}.process,.take,.area,.faq{padding:72px 5vw}.process-inner{grid-template-columns:1fr}.script{font-size:31px}.steps{grid-template-columns:1fr;margin-top:65px}.steps:before{display:none}.step{margin-bottom:38px}.step-photo{height:280px}.take-grid{grid-template-columns:1fr}.take-card{grid-template-columns:74px 1fr;padding:22px}.take-icon{width:68px;height:68px;font-size:30px}.price{padding:38px 25px}.price-card strong{font-size:82px}.map-head{flex-direction:column;gap:4px}#map{height:340px}.final{padding:64px 5vw}.final-inner{grid-template-columns:1fr}.final-btn{width:100%}.footer-inner{grid-template-columns:1fr}.footer-links{grid-column:auto;justify-content:flex-start}.legal{flex-direction:column}.mobile-quote{display:block;position:fixed;z-index:999;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));background:var(--forest);color:#fff;text-align:center;text-decoration:none;font-weight:900;padding:14px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.25)}body{padding-bottom:70px}}
+@media(max-width:520px){.hero h1{font-size:50px}.hero-actions .btn{width:100%}.trust{grid-template-columns:1fr}.trust>div{border-right:0;border-bottom:1px solid var(--line);padding:15px}.trust>div:last-child{border-bottom:0}.step-photo{height:245px}.section-title{font-size:44px}.eco{align-items:flex-start}.final-btn span{display:block;margin:4px 0 0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Howard Hauling","legalName":"Double M Solutions LLC","description":"Veteran-owned junk removal serving Howard County and nearby Maryland communities.","telephone":"+1-240-389-2534","url":"https://doublemprojects.github.io/howard-hauling/","areaServed":["Howard County, Maryland","Columbia, Maryland","Ellicott City, Maryland","Elkridge, Maryland","Laurel, Maryland","Jessup, Maryland","Savage, Maryland","Clarksville, Maryland","Fulton, Maryland"],"image":"https://doublemprojects.github.io/howard-hauling/hero-truck.png"}
+</script>
 </head>
 <body>
-
-<header class="site-header">
-  <a class="brand" href="#top">
-    <span class="brand-main">HOWARD <b>HAULING</b></span>
-    <span class="brand-sub">VETERAN OWNED • HOWARD COUNTY, MD</span>
-  </a>
-  <nav>
-    <a href="#take">What We Take</a>
-    <a href="#area">Service Area</a>
-    <a class="phone" href="tel:+12403892534">(240) 389-2534</a>
-    <a class="nav-cta" href="sms:+12403892534">GET A FREE QUOTE</a>
-  </nav>
-</header>
-
+<header class="site-header"><a class="brand" href="#top" aria-label="Howard Hauling home"><span class="brand-main">HOWARD <b>HAULING</b></span><span class="brand-sub">VETERAN OWNED • HOWARD COUNTY, MD</span></a><nav class="nav" aria-label="Primary navigation"><a href="#take">What We Take</a><a href="#area">Service Area</a><a href="#faq">FAQ</a><a class="phone" href="tel:+12403892534">(240) 389-2534</a><a class="btn" href="sms:+12403892534">GET A FREE QUOTE</a></nav></header>
 <main id="top">
-<section class="hero">
-  <div class="hero-copy">
-    <p class="eyebrow">JUNK REMOVAL IN COLUMBIA &amp; HOWARD COUNTY, MD</p>
-    <div class="hero-price"><span>STARTING AT</span><strong>$99</strong><small>for qualifying pickups*</small></div>
-    <h1>Junk gone.<br><em>Done right.</em></h1>
-    <p>Furniture, appliances, household junk, garage clutter, cleanouts and yard debris — loaded and hauled away without the hassle.</p>
-    <a class="hero-cta" href="sms:+12403892534">GET A FREE QUOTE</a>
-    <p class="hero-note">Fastest quote: text 2–3 photos + your location to <a href="sms:+12403892534">(240) 389-2534</a>.</p>
-  </div>
-  <div class="hero-visual">
-    <img class="hero-img" src="hero-truck.png" alt="Howard Hauling truck and trailer ready for a local junk removal pickup in Howard County">
-  </div>
-</section>
-<section class="quick-trust" aria-label="Why choose Howard Hauling">
-  <div><span class="qicon">★</span><b>Veteran Owned</b><small>Proudly served.</small></div>
-  <div><span class="qicon">$</span><b>Upfront Pricing</b><small>You know the price first.</small></div>
-  <div><span class="qicon">●</span><b>Howard County Local</b><small>Based in Columbia.</small></div>
-  <div><span class="qicon">✓</span><b>No Hidden Fees</b><small>What we quote is what you pay.</small></div>
-</section>
-
-<section class="process">
-  <div class="process-wrap">
-    <div class="process-copy">
-      <p class="eyebrow">HOW IT WORKS</p>
-      <h2>Three steps.<br>Zero hassle.</h2>
-      <p class="script">We handle it all.</p>
-      <p>From your first message to the final pickup, the process stays simple.</p>
-      <div class="mini-benefits">
-        <div><span>⚡</span><p><b>Fast & easy</b><small>Start with a few photos</small></p></div>
-        <div><span>✓</span><p><b>Upfront pricing</b><small>No surprises before we start</small></p></div>
-        <div><span>★</span><p><b>Veteran owned</b><small>Local Howard County business</small></p></div>
-      </div>
-    </div>
-
-    <div class="steps">
-      <article class="step">
-        <div class="step-num">1</div>
-        <div class="step-photo photo-real"><img src="step-send-photos.jpg" alt="Phone showing junk photos ready to text for a quote"><div class="step-badge">📷</div></div>
-        <h3>Send Photos</h3>
-        <p>Text your location and 2–3 clear photos of what needs to go.</p>
-        <div class="step-foot">Takes less than a minute</div>
-      </article>
-
-      <article class="step">
-        <div class="step-num">2</div>
-        <div class="step-photo photo-real"><img src="step-get-price.jpg" alt="Polished quote clipboard"><div class="step-badge">$</div></div>
-        <h3>Get Your Price</h3>
-        <p>We review the job and send you a clear, upfront price before work begins.</p>
-        <div class="step-foot">Upfront & transparent</div>
-      </article>
-
-      <article class="step">
-        <div class="step-num">3</div>
-        <div class="step-photo photo-real"><img src="step-haul-away.jpg" alt="Pickup loaded with furniture for hauling"><div class="step-badge">✓</div></div>
-        <h3>We Haul It Away</h3>
-        <p>You point out what goes. We handle the loading, hauling and removal.</p>
-        <div class="step-foot">You get your space back</div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="take" id="take">
-  <div class="take-head">
-    <div><p class="eyebrow">WHAT WE TAKE</p><h2>Common junk we remove.</h2></div>
-    <p>If it’s bulky, cluttering your space, or needs a dump run, there’s a good chance we can help. Don’t see your item? Text us a photo.</p>
-  </div>
-  <div class="take-grid">
-    <article class="take-card"><div class="take-icon">🛋</div><div><h3>Furniture & Mattresses</h3><p>Couches, chairs, tables, dressers, bed frames, mattresses and box springs.</p></div></article>
-    <article class="take-card"><div class="take-icon">▦</div><div><h3>Appliances & Bulky Items</h3><p>Accepted household appliances and other large items that are difficult to move yourself.</p></div></article>
-    <article class="take-card"><div class="take-icon">📦</div><div><h3>Household Junk & Clutter</h3><p>Boxes, unwanted belongings, garage clutter, basement junk and general household debris.</p></div></article>
-    <article class="take-card"><div class="take-icon">⌂</div><div><h3>Move-Outs & Cleanouts</h3><p>Rental units, garages, basements and smaller move-out or property cleanout jobs.</p></div></article>
-    <article class="take-card"><div class="take-icon">🌿</div><div><h3>Yard Debris</h3><p>Branches, brush and accepted outdoor cleanup debris that needs to be hauled away.</p></div></article>
-    <article class="take-card not-sure"><div class="take-icon">?</div><div><h3>Not sure?</h3><p>Text a picture to <strong>(240) 389-2534</strong>. We’ll tell you if we can take it.</p></div></article>
-  </div>
-</section>
-
-<section class="price">
-  <div class="price-card"><small>PICKUPS</small><strong>$99</strong><b>STARTING AT*</b><p>For qualifying pickups.</p></div>
-  <div><p class="eyebrow pale">STRAIGHTFORWARD PRICING</p><h2>Know the price<br>before we load.</h2><p>Send photos and your location for the fastest quote. We confirm pricing before work begins, so there are no surprises.</p><p class="fine">*Final pricing depends on volume, weight, labor, access, location and disposal requirements.</p></div>
-</section>
-
-<section class="area" id="area">
-  <div class="area-copy"><p class="eyebrow">SERVICE AREA</p><h2>Howard County<br>is our backyard.</h2><p>Based in Columbia and serving communities throughout Howard County, Maryland.</p><div class="cities"><span>Columbia</span><span>Ellicott City</span><span>Elkridge</span><span>Laurel</span><span>Jessup</span><span>Savage</span><span>Clarksville</span><span>Fulton</span></div></div>
-  <div class="map-card"><div class="map-head"><b>Howard County Service Area</b><span>Drag • scroll to zoom • pinch on mobile</span></div><div id="map"></div><div id="mapStatus">Loading Howard County boundary…</div></div>
-</section>
-
-<section class="final">
-  <div><p class="eyebrow pale">READY WHEN YOU ARE</p><h2>Send a photo.<br>Get your space back.</h2><p>Text your location and a few photos to get started.</p></div>
-  <a class="final-btn" href="sms:+12403892534">GET A FREE QUOTE<span>(240) 389-2534</span></a>
-</section>
+<section class="hero"><div class="hero-inner"><div class="hero-copy"><p class="eyebrow">Junk removal in Columbia &amp; Howard County, MD</p><div class="hero-price"><span>STARTING AT</span><strong>$99</strong><small>for qualifying pickups*</small></div><h1>Junk gone.<br><em>Done right.</em></h1><p>Furniture, appliances, household junk, garage clutter, cleanouts and yard debris — loaded and hauled away without the hassle.</p><div class="hero-actions"><a class="btn" href="sms:+12403892534">TEXT PHOTOS FOR A FREE QUOTE</a><a class="btn secondary" href="tel:+12403892534">CALL (240) 389-2534</a></div><p class="hero-note">Fastest quote: text 2–3 clear photos + your location to <a href="sms:+12403892534">(240) 389-2534</a>.</p></div><div class="hero-visual"><img src="hero-truck.png" alt="Howard Hauling pickup truck and utility trailer loaded for a junk removal job" width="589" height="433" fetchpriority="high"></div></div></section>
+<section class="trust" aria-label="Why choose Howard Hauling"><div><span class="qicon">★</span><b>Veteran Owned</b><small>Proudly served.</small></div><div><span class="qicon">$</span><b>Upfront Pricing</b><small>You know the price first.</small></div><div><span class="qicon">●</span><b>Howard County Local</b><small>Based in Columbia.</small></div><div><span class="qicon">✓</span><b>No Hidden Fees</b><small>What we quote is what you pay.</small></div></section>
+<section class="process" id="how"><div class="process-inner"><div class="process-copy"><p class="eyebrow">How it works</p><h2 class="section-title">Three steps.<br>Zero hassle.</h2><p class="script">We handle it all.</p><p class="lead">From your first message to the final pickup, the process stays simple.</p><div class="mini-benefits"><div><span>⚡</span><p><b>Fast &amp; easy</b><small>Start with a few photos</small></p></div><div><span>✓</span><p><b>Upfront pricing</b><small>No surprises before we start</small></p></div><div><span>★</span><p><b>Veteran owned</b><small>Local Howard County business</small></p></div></div></div><div class="steps"><article class="step"><div class="step-num">1</div><div class="step-photo"><img src="step-send-photos.jpg" alt="Phone showing photos of household junk ready to text for a quote" loading="lazy"><div class="step-badge">📷</div></div><h3>Send Photos</h3><p>Text your location and 2–3 clear photos of what needs to go.</p><div class="step-foot">Takes less than a minute</div></article><article class="step"><div class="step-num">2</div><div class="step-photo"><img src="step-get-price.jpg" alt="Quote clipboard representing an upfront junk removal price" loading="lazy"><div class="step-badge">$</div></div><h3>Get Your Price</h3><p>We review the job and send you a clear, upfront price before work begins.</p><div class="step-foot">Upfront &amp; transparent</div></article><article class="step"><div class="step-num">3</div><div class="step-photo"><img src="step-haul-away.jpg" alt="Pickup truck loaded with furniture for hauling" loading="lazy"><div class="step-badge">✓</div></div><h3>We Haul It Away</h3><p>You point out what goes. We handle the loading, hauling and removal.</p><div class="step-foot">You get your space back</div></article></div></div></section>
+<section class="take" id="take"><div class="take-inner"><div class="take-head"><div><p class="eyebrow">What we take</p><h2 class="section-title">Common junk we remove.</h2></div><p>If it’s bulky, cluttering your space, or needs a dump run, there’s a good chance we can help. Don’t see your item? Text us a photo.</p></div><div class="take-grid"><article class="take-card"><div class="take-icon">🛋</div><div><h3>Furniture &amp; Mattresses</h3><p>Couches, chairs, tables, dressers, bed frames, mattresses and box springs.</p></div></article><article class="take-card"><div class="take-icon">▦</div><div><h3>Appliances &amp; Bulky Items</h3><p>Accepted household appliances and other large items that are difficult to move yourself.</p></div></article><article class="take-card"><div class="take-icon">📦</div><div><h3>Household Junk &amp; Clutter</h3><p>Boxes, unwanted belongings, garage clutter, basement junk and general household debris.</p></div></article><article class="take-card"><div class="take-icon">⌂</div><div><h3>Move-Outs &amp; Cleanouts</h3><p>Rental units, garages, basements and smaller move-out or property cleanout jobs.</p></div></article><article class="take-card"><div class="take-icon">🌿</div><div><h3>Yard Debris</h3><p>Branches, brush and accepted outdoor cleanup debris that needs to be hauled away.</p></div></article><article class="take-card not-sure"><div class="take-icon">?</div><div><h3>Not sure?</h3><p>Text a picture to <strong>(240) 389-2534</strong>. We’ll tell you if we can take it.</p></div></article></div><div class="eco"><div class="eco-icon">♻</div><div><strong>Donate &amp; recycle when practical.</strong><p>Usable items are donated or recycled whenever practical, helping keep good items out of the waste stream.</p></div></div></div></section>
+<section class="price"><div class="price-card"><small>QUALIFYING PICKUPS</small><strong>$99</strong><b>STARTING AT*</b><p>Send photos for an exact quote.</p></div><div class="price-copy"><p class="eyebrow pale">Straightforward pricing</p><h2 class="section-title">Know the price<br>before we load.</h2><p>Send photos and your location for the fastest quote. We confirm pricing before work begins, so there are no surprises.</p><p class="fine">*Starting price applies to qualifying pickups. Final pricing depends on volume, weight, labor, access, location and disposal requirements.</p></div></section>
+<section class="area" id="area"><div class="area-inner"><div class="area-copy"><p class="eyebrow">Service area</p><h2 class="section-title">Howard County<br>+ nearby areas.</h2><p>Based in Columbia and serving communities throughout Howard County, plus nearby areas when scheduling and distance allow. Text your location and we’ll confirm service.</p><div class="cities"><span>Columbia</span><span>Ellicott City</span><span>Elkridge</span><span>Laurel</span><span>Jessup</span><span>Savage</span><span>Clarksville</span><span>Fulton</span><span>Nearby areas</span></div></div><div class="map-card"><div class="map-head"><b>Howard County Service Area</b><span>Drag • scroll to zoom • pinch on mobile</span></div><div id="map" aria-label="Interactive map centered on Howard County, Maryland"></div><div id="mapStatus">Loading service-area map…</div></div></div></section>
+<section class="faq" id="faq"><div class="faq-inner"><div class="faq-head"><p class="eyebrow">FAQ</p><h2 class="section-title">Quick answers before pickup.</h2><p class="lead">Still unsure? Text a photo and your location. That’s usually the fastest way to get an answer.</p></div><div class="faq-list"><details><summary>How do I get a quote?</summary><p>Text 2–3 clear photos of what you want removed along with your pickup location to (240) 389-2534. We’ll review the job and confirm pricing before work begins.</p></details><details><summary>Do pickups really start at $99?</summary><p>Yes, qualifying pickups start at $99. The final price depends on the amount and type of material, weight, labor, access, location and disposal requirements.</p></details><details><summary>What areas do you serve?</summary><p>We serve Howard County, including Columbia, Ellicott City, Elkridge, Jessup, Savage, Clarksville and Fulton, plus nearby areas when scheduling and distance allow.</p></details><details><summary>What items do you take?</summary><p>Common pickups include furniture, mattresses, accepted appliances, household clutter, garage and basement junk, move-out items, cleanout debris and accepted yard debris. Text a photo if you are unsure about a specific item.</p></details><details><summary>Do you donate or recycle?</summary><p>Yes. Usable items are donated or recycled whenever practical.</p></details><details><summary>Do I need to be available during set business hours?</summary><p>We schedule pickups directly with customers rather than advertising fixed public hours. Contact us and we’ll work out an available pickup time.</p></details></div></div></section>
+<section class="final"><div class="final-inner"><div><p class="eyebrow pale">Ready when you are</p><h2 class="section-title">Send a photo.<br>Get your space back.</h2><p>Text your location and a few photos to get started.</p></div><a class="btn final-btn" href="sms:+12403892534">GET A FREE QUOTE <span>(240) 389-2534</span></a></div></section>
 </main>
-
-<footer>
-  <div><b>HOWARD HAULING</b><span>Veteran Owned • by Double M Solutions LLC</span></div>
-  <div>Junk Removal • Columbia & Howard County, MD</div>
-  <a href="tel:+12403892534">(240) 389-2534</a>
-  <div>© 2026 Double M Solutions LLC</div>
-</footer>
-
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<footer><div class="footer-inner"><div class="footer-brand"><b>HOWARD HAULING</b><span>Veteran Owned • by Double M Solutions LLC • Insured</span></div><div class="footer-area">Junk Removal • Howard County &amp; nearby areas, MD</div><div class="footer-links"><a href="tel:+12403892534">Call</a><a href="sms:+12403892534">Text for Quote</a></div></div><div class="legal"><span>© 2026 Double M Solutions LLC. All rights reserved.</span><span>Pricing confirmed before work begins.</span></div></footer>
+<a class="mobile-quote" href="sms:+12403892534" aria-label="Text Howard Hauling for a free quote">TEXT PHOTOS FOR A FREE QUOTE</a>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
-const map=L.map('map',{scrollWheelZoom:true,zoomControl:true}).setView([39.22,-76.87],10);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
-const status=document.getElementById('mapStatus');
-fetch('https://opendata.maryland.gov/api/v3/views/y8c4-8fr3/query.geojson?accessType=DOWNLOAD')
-.then(r=>{if(!r.ok)throw new Error();return r.json()})
-.then(data=>{
- const features=(data.features||[]).filter(f=>{
-   const p=f.properties||{};
-   return Object.values(p).some(v=>['howard','howard county'].includes(String(v).toLowerCase()));
- });
- if(!features.length)throw new Error();
- const layer=L.geoJSON({type:'FeatureCollection',features},{style:{color:'#24563b',weight:4,fillColor:'#6f9b79',fillOpacity:.28}}).addTo(map);
- map.fitBounds(layer.getBounds(),{padding:[22,22]});
- status.textContent='Howard County boundary • Maryland Open Data';
-})
-.catch(()=>{
- status.textContent='Interactive Howard County service map';
- L.circleMarker([39.2037,-76.8610],{radius:7,color:'#24563b',fillColor:'#24563b',fillOpacity:1}).addTo(map).bindPopup('Columbia, Maryland');
-});
+(function(){
+ const status=document.getElementById('mapStatus');
+ if(!window.L){status.textContent='Howard County + nearby areas • Text your location to confirm service.';return;}
+ const map=L.map('map',{scrollWheelZoom:false,zoomControl:true}).setView([39.22,-76.87],10);
+ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
+ const circle=L.circle([39.22,-76.87],{radius:21000,color:'#205c3d',weight:3,fillColor:'#65926f',fillOpacity:.18}).addTo(map);
+ L.marker([39.2037,-76.8610]).addTo(map).bindPopup('<b>Howard Hauling</b><br>Based in Columbia, MD');
+ map.fitBounds(circle.getBounds(),{padding:[20,20]});
+ status.textContent='Howard County + nearby areas • Text your location to confirm service.';
+ map.on('click',()=>map.scrollWheelZoom.enable());
+})();
 </script>
-</body>
-</html>
+</body></html>

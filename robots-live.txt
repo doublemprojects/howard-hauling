@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://doublemprojects.github.io/howard-hauling/sitemap.xml
