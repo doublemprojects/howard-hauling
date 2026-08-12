@@ -101,6 +101,42 @@ details[open] summary::after{content:"−"}
 #map .leaflet-top{top:0}#map .leaflet-bottom{bottom:0}
 #map .leaflet-left{left:0}#map .leaflet-right{right:0}
 
+
+/* FINAL DESKTOP HERO COMPACTION
+   Goal: keep the approved layout/image, but make the hero short enough
+   that the Veteran Owned / Upfront Pricing / Howard County Local /
+   No Hidden Fees strip is visible on a normal desktop viewport. */
+@media (min-width: 901px){
+  .hero{padding-top:38px!important;padding-bottom:34px!important}
+  .hero-grid{
+    grid-template-columns:minmax(360px,.68fr) minmax(660px,1.32fr)!important;
+    gap:48px!important;
+    align-items:center!important;
+  }
+  .hero-copy{padding-top:0!important;padding-bottom:0!important}
+  .hero-kicker{margin-bottom:12px!important}
+  .price-chip{margin-top:0!important;margin-bottom:14px!important}
+  .hero h1{margin-top:0!important;margin-bottom:14px!important}
+  .hero-copy>p{margin-top:0!important;margin-bottom:18px!important}
+  .hero-actions{margin-top:0!important}
+  .hero-note{margin-top:10px!important}
+  .hero-visual{
+    height:500px!important;
+    min-height:0!important;
+    max-height:500px!important;
+  }
+  .hero-visual img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+    object-position:center center!important;
+  }
+}
+@media (min-width: 1400px) and (max-height: 950px){
+  .hero{padding-top:30px!important;padding-bottom:28px!important}
+  .hero-visual{height:460px!important;max-height:460px!important}
+}
+
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"Howard Hauling","legalName":"Double M Solutions LLC","description":"Veteran-owned junk removal serving Howard County and nearby Maryland communities.","telephone":"+1-240-389-2534","url":"https://doublemprojects.github.io/howard-hauling/","areaServed":["Howard County, Maryland","Columbia, Maryland","Ellicott City, Maryland","Elkridge, Maryland","Laurel, Maryland","Jessup, Maryland","Savage, Maryland","Clarksville, Maryland","Fulton, Maryland"],"image":"https://doublemprojects.github.io/howard-hauling/hero-truck.png"}
