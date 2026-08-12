@@ -25,33 +25,7 @@
 @media(max-width:520px){.hero h1{font-size:50px}.hero-actions .btn{width:100%}.trust{grid-template-columns:1fr}.trust>div{border-right:0;border-bottom:1px solid var(--line);padding:15px}.trust>div:last-child{border-bottom:0}.step-photo{height:245px}.section-title{font-size:44px}.eco{align-items:flex-start}.final-btn span{display:block;margin:4px 0 0}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
-/* Clean overlay for the quote card: hides the faint generated text remnants in the source image */
-.step:nth-child(2) .step-photo::before{
-  content:"";
-  position:absolute;
-  z-index:2;
-  left:22%;
-  right:18%;
-  top:21%;
-  height:31%;
-  background:#fff;
-  border-radius:3px;
-}
-.step:nth-child(2) .step-photo::after{
-  content:"QUOTE";
-  position:absolute;
-  z-index:3;
-  left:22%;
-  right:18%;
-  top:28%;
-  text-align:center;
-  color:#205c3d;
-  font-size:24px;
-  line-height:1;
-  font-weight:900;
-  letter-spacing:.01em;
-}
-.step:nth-child(2) .step-badge{z-index:4}
+
 
 
 /* FAQ: the entire row, including the +/- area, is one clickable target */
@@ -135,6 +109,16 @@ details[open] summary::after{content:"−"}
 @media (min-width: 1400px) and (max-height: 950px){
   .hero{padding-top:30px!important;padding-bottom:28px!important}
   .hero-visual{height:460px!important;max-height:460px!important}
+}
+
+
+/* Preserve the approved embedded YOU POINT. WE HAUL IT AWAY. banner
+   while keeping the compact desktop hero height. */
+@media (min-width:901px){
+  .hero-visual img{
+    object-fit:cover!important;
+    object-position:center bottom!important;
+  }
 }
 
 </style>
